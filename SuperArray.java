@@ -4,6 +4,7 @@ public class SuperArray{
 
   public SuperArray(){
     data = new String[10];
+    size = 10;
   }
   public void clear(){
     size = 0;
@@ -17,14 +18,46 @@ public class SuperArray{
     }
     return false;
   }
-  public boolean add(string s){
-    int num = 0;
-    if (data[num] == null){
-      data[num] = s;
-      return true;
+  public boolean add(String s){
+    if (data[size] == null){
+      data[size] = s;
     }
-    else
-    num = num + 1;
-    return false;
+    else{
+    size = size + 1;
+    add(s);
+    }
+    return true;
   }
+  public String toString(){
+    String str = "[";
+    for(int i =0;i < size() - 1 ;i++){
+    str = str +  data[i] + ",";
+    }
+    return str + data[size() - 1] + "]";
+  }
+  public String get(int n){
+    if(n < 0 || n >= size()){
+      return null;
+    }
+    return data[n];
+  }
+  public String toStringDebug(){
+    String str = "[";
+    for(int i =0;i < data.length - 1 ;i++){
+      str = str + data[i] + ",";
+    }
+    return str + data[data.length] + "]";
+  }
+  public String set(int n , String str){
+    String old = data[n];
+    if(n < 0 || n >= size()){
+      return null;
+    }
+    else{
+      data[n] = str;
+    }
+    return old;
+  }
+
+
 }
