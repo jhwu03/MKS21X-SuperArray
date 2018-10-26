@@ -96,7 +96,7 @@ public int indexOf(String Target){
   return -1;
 }
   public int lastIndexOf(String Target){
-    for(int i = data.length - 1 ; i > 0 ;i = i - 1){
+    for(int i = size - 1 ; i > 0 ;i = i - 1){
       if (Target.equals(data[i])){
         return i;
       }
