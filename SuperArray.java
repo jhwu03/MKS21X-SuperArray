@@ -104,6 +104,39 @@ public int indexOf(String Target){
     return -1;
   }
 
+  public void add(int nn , String s){
+    if(nn < 0 || nn >= size()){
+      System.out.println( " error: index out of range");
+    }
+    resize();
+    for (int n = size-1; n >= nn; n = n - 1){
+    data[n+1] = data[n];
+  }
+  data[nn] = s;
+  size = size + 1;
+  }
+
+  public String remove(int ind ){
+    if(ind < 0 || ind >= size()){
+      System.out.println( " error: index out of range");
+      return null;
+    }
+    String removed = data[ind];
+    for (int n = ind ; n < size - 1; n = n + 1){
+    data[n] = data[n + 1];
+  }
+  data[size - 1] = null;
+  size = size - 1;
+  return removed;
+  }
+  public boolean remove(String Target){
+    if (this.contains(Target) == false){
+      return false;
+    } else {
+      this.remove(indexOf(Target));
+      return true;
+    }
+  }
 
 
 }
