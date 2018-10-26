@@ -20,13 +20,13 @@ public class SuperArray{
   }
   public boolean add(String s){
     data[size] = s;
-    size ++;
+    size = size + 1;
     return true;
   }
 
   public String toString(){
     String str = "[";
-    for(int i =0;i < size() ;i++){
+    for(int i =0;i < size ;i++){
       if ( i == size - 1){
         str = str + data[i];
       }
