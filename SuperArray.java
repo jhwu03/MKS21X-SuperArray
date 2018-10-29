@@ -6,6 +6,10 @@ public class SuperArray{
     data = new String[10];
     size = 0;
   }
+  public SuperArray(int startingCapacity){
+    data = new String[startingCapacity];
+    size = startingCapacity;
+  }
   public void clear(){
     size = 0;
   }
@@ -70,7 +74,7 @@ public class SuperArray{
 
   private void resize(){
     if (data.length == size){
-      String[] newdata = new String[data.length * 2];
+      String[] newdata = new String[ (data.length * 2) + 1];
     for(int i =0; i < data.length ;i++){
       newdata[i] = data[i];
     }
