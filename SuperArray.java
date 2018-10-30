@@ -59,7 +59,7 @@ public class SuperArray{
 
   public String get(int n){
     if(n < 0 || n >= size()){
-      throw new IndexOutOfBoundsException("error: index" + n + "out of bounds");
+      throw new IndexOutOfBoundsException("error: index " + n + "out of bounds");
     }else{
     return data[n];
   }
@@ -68,7 +68,7 @@ public class SuperArray{
   public String set(int n , String str){
     String old = data[n];
     if(n < 0 || n >= size()){
-       throw new IndexOutOfBoundsException("error: index" + n + "out of bounds");
+       throw new IndexOutOfBoundsException("error: index " + n + "out of bounds");
     }
     else{
       data[n] = str;
@@ -113,7 +113,7 @@ public int indexOf(String Target){
   }
 
   public void add(int nn , String s){
-    if(nn < 0 || nn >= size()){
+    if(nn < 0 || nn > size){
       throw new IndexOutOfBoundsException("error: index" + nn + "out of bounds");
     }
     resize();
@@ -125,7 +125,7 @@ public int indexOf(String Target){
   }
 
   public String remove(int ind ){
-    if(ind < 0 || ind >= size()){
+    if(ind < 0 || ind >= size){
       throw new IndexOutOfBoundsException("error: index" + ind + "out of bounds");
     }
     String removed = data[ind];
