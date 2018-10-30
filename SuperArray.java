@@ -7,6 +7,9 @@ public class SuperArray{
     size = 0;
   }
   public SuperArray(int startingCapacity){
+    if (startingCapacity < 0){
+      throw new  IllegalArgumentException ("can't be negative");
+    }
     data = new String[startingCapacity];
     size = startingCapacity;
   }
@@ -56,15 +59,16 @@ public class SuperArray{
 
   public String get(int n){
     if(n < 0 || n >= size()){
-      return null;
-    }
+      throw new IndexOutOfBoundsException();
+    }else{
     return data[n];
+  }
   }
 
   public String set(int n , String str){
     String old = data[n];
     if(n < 0 || n >= size()){
-      return null;
+       throw new IndexOutOfBoundsException();
     }
     else{
       data[n] = str;
